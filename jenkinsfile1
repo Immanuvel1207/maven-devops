@@ -2,17 +2,17 @@ pipeline {
     agent any
 
     environment {
-        DOCKER_IMAGE = "justice/social-app"
-        DOCKER_TAG = "latest"
+        DOCKER_IMAGE = "Immanuvel12/devops"
+        DOCKER_TAG = "maven"
         DOCKER_CREDENTIALS_ID = "docker"
-        GITHUB_CREDENTIALS_ID = "github-seccred"
+        GITHUB_CREDENTIALS_ID = "github-secret"
         KUBECONFIG = "/var/lib/jenkins/.kube/config"
     }
 
     stages {
         stage('Checkout Code') {
             steps {
-                git credentialsId: GITHUB_CREDENTIALS_ID, url: 'https://github.com/justicesecops-10/spring-boot-app', branch: 'main'
+                git credentialsId: GITHUB_CREDENTIALS_ID, url: 'https://github.com/Immanuvel1207/maven-devops', branch: 'main'
             }
         }
 
